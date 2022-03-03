@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-0pbehab6(xn48cflbjbml55$9t6^$ljml^w*sawpth_7+-7qag
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://localhost:4200','127.0.0.1']
 
 
 # Application definition
@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'allauth.account',
     "inventario",
     "userapp",
+    "corsheaders"
     
     
 ]
@@ -69,6 +70,13 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.common.CommonMiddleware',
+]
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:4200',
+    
 ]
 
 ROOT_URLCONF = 'api_mpadmin.urls'
