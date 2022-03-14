@@ -4,7 +4,7 @@ from .views.ProveedorDetail import ProveedorDetail
 from .views.ProveedorView import ProveedorView
 from .views.ArticuloView import ArticuloView
 urlpatterns = [    
-    path('proveedor/',ProveedorView.proveedor_list,name="proveedor_list"),    
+    path('proveedor',ProveedorView.proveedor_list,name="proveedor_list"),    
     path('proveedor/<pk>/',ProveedorView.proveedor_detail,name="proveedor_detail"),    
     
     path('articulo/',ArticuloView.articulo_list,name="articulo_list"),
